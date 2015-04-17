@@ -19,7 +19,7 @@ $.ajax({
 ```
 
 Si le serveur `http:localhost:3000` a sa configuration CORS permettant un accès à ses ressources depuis `http:localhost:8888` alors le client reçoit en réponse à sa requête le document demandé.
-> simpleCORSrequest.png
+![simple cors request debugbar image](https://github.com/camel113/dealwithcors/blob/master/images/simpleCORSrequest.png "Logo Title Text 1")
 > On constate que le serveur autorise les requêtes provenant de l'origine `http:localhost:8888`
 
 ##Preflighted requests
