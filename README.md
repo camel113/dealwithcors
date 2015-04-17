@@ -80,7 +80,7 @@ vectorLyr = new OpenLayers.Layer.Vector("Vector layer from GeoJSON", {
   strategies: [new OpenLayers.Strategy.Fixed()],
 });
  ```
-Si on observe la requête qui part, il y a effectivement un custom headers de type `X-Requested-With` indépendamment de notre volonté.
+Si on observe la requête qui part, il y a un custom headers de type `X-Requested-With` qui est envoyé indépendamment de notre volonté.
 
-> ol2CORSerror.png
-> On constate que le serveur n'autorise pas explicitement les headers de type `X-Requested-With`. C'est pourquoi il ne retourne rien.
+![custom header CORS OL2 request debugbar image](https://github.com/camel113/dealwithcors/blob/master/images/ol2CORSerror.png "CORS OL2 request with custom headers")
+> On constate dans notre cas que le serveur n'autorise pas explicitement les headers de type `X-Requested-With`. C'est pourquoi il ne retourne rien.
