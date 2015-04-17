@@ -19,7 +19,9 @@ $.ajax({
 ```
 
 Si le serveur `http:localhost:3000` a sa configuration CORS permettant un accès à ses ressources depuis `http:localhost:8888` alors le client reçoit en réponse à sa requête le document demandé.
+
 ![simple cors request debugbar image](https://github.com/camel113/dealwithcors/blob/master/images/simpleCORSrequest.png "simple cors request")
+
 > On constate que le serveur autorise les requêtes provenant de l'origine `http:localhost:8888`
 
 ##Preflighted requests
@@ -43,7 +45,8 @@ Une requête preflighted de type HTTP OPTIONS est d'abord envoyé par le browser
  
 Si le serveur n'est pas configuré pour ce type d'header alors il répondra de cette manière là
  
-> preflightedCORSerror.png
+![simple cors request debugbar image](https://github.com/camel113/dealwithcors/blob/master/images/preflightedCORSerror.png "cors request with custom headers")
+
 > On constate que le browser a envoyé une requête de type HTTP OPTIONS. La réponse n'est pas forcémment claire et n'indique pas clairement qu'il y a une erreur. Toutefois notre requête GET n'a pas pu être exécutée et le corps de la réponse est vide.
 
 Configurons maintenant serveur node `http:localhost:3000` afin qu'il accepte les custom headers `X-Requested-With`
