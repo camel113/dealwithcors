@@ -20,7 +20,7 @@ $.ajax({
 
 Si le serveur `http:localhost:3000` a sa configuration CORS permettant un accès à ses ressources depuis `http:localhost:8888` alors le client reçoit en réponse à sa requête le document demandé.
 
-![simple cors request debugbar image](https://github.com/camel113/dealwithcors/blob/master/images/simpleCORSrequest.png "simple cors request")
+![simple CORS request debugbar image](https://github.com/camel113/dealwithcors/blob/master/images/simpleCORSrequest.png "simple CORS request")
 
 > On constate que le serveur autorise les requêtes provenant de l'origine `http:localhost:8888`
 
@@ -45,7 +45,7 @@ Une requête preflighted de type HTTP OPTIONS est d'abord envoyé par le browser
  
 Si le serveur n'est pas configuré pour ce type d'header alors il répondra de cette manière là
  
-![simple cors request debugbar image](https://github.com/camel113/dealwithcors/blob/master/images/preflightedCORSerror.png "cors request with custom headers")
+![custom header CORS request debugbar image](https://github.com/camel113/dealwithcors/blob/master/images/preflightedCORSerror.png "CORS request with custom headers")
 
 > On constate que le browser a envoyé une requête de type HTTP OPTIONS. La réponse n'est pas forcémment claire et n'indique pas clairement qu'il y a une erreur. Toutefois notre requête GET n'a pas pu être exécutée et le corps de la réponse est vide.
 
@@ -60,13 +60,14 @@ app.use(function(req, res, next) {
  ```
 Si on tente la même requête on a cette fois une autre réponse
 
-> preflightedCORSok.png
+![custom header CORS request debugbar image](https://github.com/camel113/dealwithcors/blob/master/images/preflightedCORSok.png "CORS request with custom headers")
+
 > D'abord le serveur répond à la requête prefligthed par le browser. 
 > Dans notre cas il autorise les requêtes avec headers `X-Requested-With`
 
 Puis notre requête GET est executée et retourne la réponse souhaitée
 
-> preflightedCORSget.png
+![custom header CORS request debugbar image](https://github.com/camel113/dealwithcors/blob/master/images/preflightedCORSget.png "CORS request with custom headers")
 
 ## Pourquoi la requête éxecutée depuis notre code openlayers2 n'aboutit pas?
 
