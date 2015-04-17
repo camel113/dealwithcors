@@ -1,4 +1,5 @@
-#Tentative d'explication du méchanisme CORS (en rapport avec OPENLAYERS 2)
+#Méchanisme CORS
+Tentative d'explication du méchanisme CORS. La conclusion permet de comprendre pourquoi la méthode `OpenLayers.Protocol.HTTP` de openlayers 2 s'arrête à la requête OPTIONS dans notre cas.
 
 Documentation [HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 
